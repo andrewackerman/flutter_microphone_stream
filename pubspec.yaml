@@ -2,7 +2,7 @@ name: microphone_stream
 description: A new flutter plugin project.
 version: 0.0.1
 author: Andrew Ackerman
-homepage: N/A
+homepage: https://github.com/andrewackerman/flutter_microphone_stream.git
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
