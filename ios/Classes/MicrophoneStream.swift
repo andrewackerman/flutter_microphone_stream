@@ -32,9 +32,10 @@ class MicrophoneController {
         let session = AVAudioSession.sharedInstance()
         do {
             try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try session.setActive(true)
             try session.setPreferredInputNumberOfChannels(1)
-            try session.setPreferredIOBufferDuration(65)
-            print("Session duration set to \(session.preferredIOBufferDuration) seconds")
+            try session.setPreferredIOBufferDuration(0.93)
+            print("Buffer duration set to \(session.preferredIOBufferDuration) seconds")
         } catch {
             return -1
         }

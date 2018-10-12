@@ -1,7 +1,7 @@
 name: microphone_stream
 description: A new flutter plugin project.
-version: 0.0.1
-author: Andrew Ackerman
+version: 0.0.2
+author: Andrew Ackerman <andrew@canaryspeech.com>
 homepage: https://github.com/andrewackerman/flutter_microphone_stream.git
 
 environment:
