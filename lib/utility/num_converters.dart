@@ -1,6 +1,5 @@
-
-
-List<int> numberToBytes(int val, int byteCount, {int offset = 0, bool littleEndian = true}) {
+List<int> numberToBytes(int val, int byteCount,
+    {int offset = 0, bool littleEndian = true}) {
   List<int> result = List(byteCount);
 
   for (int i = 0; i < byteCount; i++) {

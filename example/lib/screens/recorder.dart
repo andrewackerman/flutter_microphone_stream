@@ -29,18 +29,19 @@ class _RecorderState extends State<Recorder> {
   }
 
   void saveRecording() async {
-    final String path = await MicrophoneUtility.buildFilePath('recordings/sample.wav');
+    final String path =
+        await MicrophoneUtility.buildFilePath('recordings/sample.wav');
     WavCodec.encode(path, sampleData);
     print('Recording saved to $path');
   }
 
-  // @override 
+  // @override
   // void initState() {
   //   MicrophoneUtility.buildFilePath('dir1/dir2/dir3/test.txt').then((value) => print(value));
   //   super.initState();
   // }
 
-  Widget buildButton({ String text, Function callback }) {
+  Widget buildButton({String text, Function callback}) {
     return MaterialButton(
       minWidth: 200.0,
       height: 42.0,

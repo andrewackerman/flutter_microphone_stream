@@ -17,7 +17,7 @@ class BitUtility {
 
     List<int> results = List();
     int value, bitLength, newVal, offset;
-    int cursor = 0;
+    
     for (int i = 0; i < values.length; i++) {
       value = values[i];
       bitLength = bitLengths[i];

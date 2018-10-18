@@ -14,7 +14,7 @@ class ArrayConverters {
 
   static Iterable<int> byteToShort(List<int> list) sync* {
     for (int i = 0; i < list.length; i += 2) {
-      yield (list[i] << 8) + list[i+1];
+      yield (list[i] << 8) + list[i + 1];
     }
   }
 }

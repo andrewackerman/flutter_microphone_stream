@@ -3,8 +3,7 @@ import 'dart:math' as Math;
 export 'dart:math';
 
 double abs(double a) {
-  if (a < 0)
-    return -a;
+  if (a < 0) return -a;
   return a;
 }
 

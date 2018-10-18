@@ -1,5 +1,1 @@
-
-
-abstract class Codec {
-  
-}
+abstract class Codec {}

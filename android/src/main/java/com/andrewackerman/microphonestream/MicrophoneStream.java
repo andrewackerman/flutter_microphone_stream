@@ -63,12 +63,7 @@ public class MicrophoneStream {
     }
 
     public void stop() {
-        try {
-            isRecording = false;
-            recorder.stop();
-        } finally {
-            reset();
-        }
+        isRecording = false;
     }
 
     private void processAudioData() {
@@ -84,6 +79,9 @@ public class MicrophoneStream {
                 handler.processSampleData(data);
             }
         }
+
+        recorder.stop();
+        reset();
 
         Log.i(TAG, "Stopping recording thread. Last read value: " + read);
     }

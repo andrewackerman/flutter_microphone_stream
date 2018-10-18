@@ -56,7 +56,7 @@
 //     List<int> sampleCountBytes = numberToBytes(sampleCount, 4, offset: 4);
 //     int sampleCountRemainder = sampleCount & 0xF;
 
-//     int bit1 = 
+//     int bit1 =
 //   }
 // }
 

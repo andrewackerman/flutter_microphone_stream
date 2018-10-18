@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:microphone_stream/microphone_stream.dart';
 
 class ExampleSelect extends StatelessWidget {
-
   Widget createExampleButton({
     @required BuildContext context,
     @required String text,
@@ -20,12 +19,11 @@ class ExampleSelect extends StatelessWidget {
   @override
   Widget build(BuildContext cxt) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Select an example'),
-      ),
-      body: ListView(
-        children: [
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Text('Select an example'),
+        ),
+        body: ListView(children: [
           SizedBox(height: 15.0),
           MaterialButton(
             minWidth: 200.0,
@@ -38,16 +36,16 @@ class ExampleSelect extends StatelessWidget {
 
               if (!hasPerm) {
                 bool gotPerm = await MicrophoneStream.requestPermissions();
-                print ("requested permissions successfully: $gotPerm");
+                print("requested permissions successfully: $gotPerm");
               }
             },
           ),
           SizedBox(height: 15.0),
-          createExampleButton(context: cxt, text: 'Visualizer', route: '/visualizer'),
+          createExampleButton(
+              context: cxt, text: 'Visualizer', route: '/visualizer'),
           SizedBox(height: 15.0),
-          createExampleButton(context: cxt, text: 'Recorder', route: '/recorder'),
-        ]
-      )
-    );
+          createExampleButton(
+              context: cxt, text: 'Recorder', route: '/recorder'),
+        ]));
   }
 }

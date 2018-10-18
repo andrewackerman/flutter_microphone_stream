@@ -16,16 +16,13 @@ class _VisualizerState extends State<Visualizer> {
   @override
   Widget build(BuildContext cxt) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Visualizer'),
-      ),
-      body: ListView(
-        children: [
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Text('Visualizer'),
+        ),
+        body: ListView(children: [
           SizedBox(height: 15.0),
           Text('TODO'),
-        ]
-      )
-    );
+        ]));
   }
 }

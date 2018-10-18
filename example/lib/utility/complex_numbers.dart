@@ -30,22 +30,26 @@ class Complex {
   const Complex.fromInt(int val) : this(val + 0.0, 0.0);
   const Complex.fromDouble(double val) : this(val, 0.0);
 
-
   static Complex fromPolarCoordinates(double magnitude, double phase) {
     return Complex(magnitude * Math.cos(phase), magnitude * Math.sin(phase));
   }
+
   static Complex negate(Complex val) {
     return -val;
   }
+
   static Complex add(Complex left, Complex right) {
     return left + right;
   }
+
   static Complex subtract(Complex left, Complex right) {
     return left - right;
   }
+
   static Complex multiply(Complex left, Complex right) {
     return left * right;
   }
+
   static Complex divide(Complex dividend, Complex divisor) {
     return dividend / divisor;
   }
@@ -58,7 +62,8 @@ class Complex {
   //Binary
   Complex operator +(Complex val) => Complex(_r + val._r, _i + val._i);
   Complex operator -(Complex val) => Complex(_r - val._r, _i - val._i);
-  Complex operator *(Complex val) => Complex(_r*val._r - _i*val._i, _r*val._i + _i*val._r);
+  Complex operator *(Complex val) =>
+      Complex(_r * val._r - _i * val._i, _r * val._i + _i * val._r);
   Complex operator /(Complex val) {
     var a = _r;
     var b = _i;
@@ -67,10 +72,12 @@ class Complex {
 
     if (Math.abs(d) < Math.abs(c)) {
       double doc = d / c;
-      return Complex((a + b * doc) / (c + d * doc), (b - a * doc) / (c + d * doc));
+      return Complex(
+          (a + b * doc) / (c + d * doc), (b - a * doc) / (c + d * doc));
     } else {
       double cod = c / d;
-      return Complex((b + a * cod) / (d + c * cod), (-a + b * cod) / (d + c * cod));
+      return Complex(
+          (b + a * cod) / (d + c * cod), (-a + b * cod) / (d + c * cod));
     }
   }
 
@@ -114,7 +121,7 @@ class Complex {
       return _r == c._r && _i == c._i;
     }
     return false;
-  } 
+  }
 
   // Formatting/parsing options
 
@@ -176,7 +183,8 @@ class Complex {
 
   static Complex atan(Complex val) {
     const Complex two = Complex(2.0, 0.0);
-    return (imaginaryOne / two) * (log(one - imaginaryOne * val) - log(one + imaginaryOne * val));
+    return (imaginaryOne / two) *
+        (log(one - imaginaryOne * val) - log(one + imaginaryOne * val));
   }
 
   // Other numerical functions
@@ -202,7 +210,8 @@ class Complex {
   }
 
   static Complex sqrt(Complex val) {
-    return Complex.fromPolarCoordinates(Math.sqrt(val.magnitude), val.phase / 2.0);
+    return Complex.fromPolarCoordinates(
+        Math.sqrt(val.magnitude), val.phase / 2.0);
   }
 
   static Complex pow(Complex val, double power) {

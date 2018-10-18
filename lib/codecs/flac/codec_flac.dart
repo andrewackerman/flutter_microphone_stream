@@ -9,7 +9,6 @@
 //   }
 
 //   static List<int> decode(String path) {
-    
+
 //   }
 // }
-

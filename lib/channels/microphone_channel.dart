@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:typed_data';
 
 import 'package:flutter/services.dart';
 
@@ -55,5 +54,4 @@ class MicrophoneStream {
   static Future<void> stopListening() async {
     await _channel.invokeMethod('stopListening');
   }
-
 }

@@ -63,10 +63,12 @@ public class MicrophoneStreamPlugin implements MethodCallHandler, PluginRegistry
 
             case "startListening":
                 startListening();
+                result.success(null);
                 break;
 
             case "stopListening":
                 stopListening();
+                result.success(null);
                 break;
 
             // Default Handling

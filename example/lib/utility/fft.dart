@@ -23,12 +23,9 @@ class FFT {
 
   void separate(_Ref<List<Complex>> a, int m, int n) {
     List<Complex> b = List((n - m ~/ 2));
-    for (int i = 0; i < (n - m) ~/ 2; i++)
-      b[i] = a.value[m + i * 2 + 1];
-    for (int i = 0; i < (n - m) ~/ 2; i++)
-      a.value[m + i] = a.value[m + i * 2];
-    for (int i = 0; i < (n - m) ~/ 2; i++) 
-      a.value[m + i + (n - m) ~/ 2] = b[i];
+    for (int i = 0; i < (n - m) ~/ 2; i++) b[i] = a.value[m + i * 2 + 1];
+    for (int i = 0; i < (n - m) ~/ 2; i++) a.value[m + i] = a.value[m + i * 2];
+    for (int i = 0; i < (n - m) ~/ 2; i++) a.value[m + i + (n - m) ~/ 2] = b[i];
   }
 
   void fft2(_Ref<List<Complex>> X, int m, int n) {
@@ -47,7 +44,7 @@ class FFT {
   }
 
   double signal(double t) {
-    const List<double> freq = [ 2.0, 5.0, 11.0, 17.0, 29.0 ];
+    const List<double> freq = [2.0, 5.0, 11.0, 17.0, 29.0];
     double sum = 0.0;
     for (int j = 0; j < freq.length; j++) {
       sum += Math.sin(2 * Math.pi * freq[j] * t);

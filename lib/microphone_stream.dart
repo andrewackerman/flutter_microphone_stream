@@ -8,7 +8,7 @@ export 'channels/microphone_channel.dart';
 
 class MicrophoneUtility {
   static const MethodChannel _channel =
-    const MethodChannel('microphone_stream');
+      const MethodChannel('microphone_stream');
 
   static Future<String> buildFilePath(String filename) async {
     final String path = await _channel.invokeMethod('buildFilePath', filename);

@@ -1,20 +1,20 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:microphone_stream/utility/array_converters.dart';
 import 'package:microphone_stream/utility/num_converters.dart';
 
 class WavCodec {
-  static void encode(String path, List<int> sampleData, { int sampleRate = 44100, int bitsPerSample = 16, int channels = 1 }) {
+  static void encode(String path, List<int> sampleData,
+      {int sampleRate = 44100, int bitsPerSample = 16, int channels = 1}) {
     final int byteRate = sampleRate * channels * bitsPerSample ~/ 8;
     final int blockAlign = channels * bitsPerSample ~/ 8;
 
     List<int> headerData = List<int>(44);
 
     // Header 1
-    headerData.setRange(0 , 4 , ascii.encode('RIFF'));
-    headerData.setRange(4 , 8 , int32ToUint8(36 + sampleData.length));
-    headerData.setRange(8 , 12, ascii.encode('WAVE'));
+    headerData.setRange(0, 4, ascii.encode('RIFF'));
+    headerData.setRange(4, 8, int32ToUint8(36 + sampleData.length));
+    headerData.setRange(8, 12, ascii.encode('WAVE'));
 
     // Header 2
     headerData.setRange(12, 16, ascii.encode('fmt '));
@@ -37,7 +37,7 @@ class WavCodec {
   static List<int> decode(String path) {
     var file = new File(path);
     var bytes = file.readAsBytesSync();
-    
+
     String riff = ascii.decode(bytes.sublist(0, 4));
     String wave = ascii.decode(bytes.sublist(8, 12));
     String fmt = ascii.decode(bytes.sublist(12, 16));
@@ -45,7 +45,7 @@ class WavCodec {
 
     assert(riff == 'RIFF');
     assert(wave == 'WAVE');
-    assert(fmt  == 'fmt ');
+    assert(fmt == 'fmt ');
     assert(data == 'data');
 
     return bytes.sublist(44);
