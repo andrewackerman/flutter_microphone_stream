@@ -131,14 +131,18 @@ public class MicrophoneStreamPlugin implements MethodCallHandler, PluginRegistry
     }
 
     public void processSampleData(short[] data) {
-        byte[] bytes = new byte[data.length * 2];
+        final byte[] bytes = new byte[data.length * 2];
 
         for (int i = 0; i < data.length; i++) {
             bytes[i*2] = (byte) (data[i] & 0x00FF);
             bytes[i*2 + 1] = (byte) ((data[i] & 0xFF00) >> 8);
         }
 
-        this.channel.invokeMethod("handleSamples", bytes);
+        this.registrar.activity().runOnUiThread(new Runnable() {
+            public void run() {
+                channel.invokeMethod("handleSamples", bytes);
+            }
+        });
     }
 
     //}

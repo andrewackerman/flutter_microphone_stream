@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:microphone_stream/microphone_stream.dart';
 import 'package:microphone_stream_example/screens/example_select.dart';
 import 'package:microphone_stream_example/screens/recorder.dart';
+import 'package:microphone_stream_example/screens/test.dart';
 import 'package:microphone_stream_example/screens/visualizer.dart';
 
 class MyApp extends StatefulWidget {
@@ -28,7 +29,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Inherited',
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (BuildContext cxt) => ExampleSelect(),
+        '/': (BuildContext cxt) => TestView(),
         '/visualizer': (BuildContext cxt) => Visualizer(),
         '/recorder': (BuildContext cxt) => Recorder(),
       },

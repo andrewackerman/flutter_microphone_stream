@@ -40,6 +40,13 @@ public class SwiftMicrophoneStreamPlugin: NSObject, FlutterPlugin {
             stopListening()
             result(true)
             
+        // GVoice Functions
+            
+//        case "initializeGVoice":
+//            let host = call.arguments[0] as! String
+//            GVoiceController.sharedInstance.initialize()
+//            result(true)
+            
         // Default Handling
             
         default:
@@ -112,6 +119,8 @@ extension SwiftMicrophoneStreamPlugin : MicrophoneStreamDelegate {
     
     func processSampleData(_ data: Data) {
         self.channel.invokeMethod("handleSamples", arguments: [UInt8](data))
+        
+        
         
 //        data.withUnsafeBytes { (pointer: UnsafePointer<Int16>) in
 //            let buffer = UnsafeBufferPointer(start: pointer, count: data.count / 2)
