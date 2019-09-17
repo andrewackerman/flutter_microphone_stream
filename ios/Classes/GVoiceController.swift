@@ -8,7 +8,7 @@
 //import Foundation
 //import googleapis
 //
-//let API_KEY = "AIzaSyD3z5dOAKUoxk3HF4EKtuH1y56nsxRBKTQ"
+//let API_KEY = ""
 //let HOST    = "speech.googelapis.com"
 //
 //enum GVoiceStatus {
